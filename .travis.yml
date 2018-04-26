@@ -8,9 +8,12 @@ install:
 
 before_script:
   - npm install -g gulp
+  - npm install gulp gulp-minify-css gulp-htmlmin gulp-htmlclean --save
+
 
 script:
   - hexo g
+  - gulp
 
 after_script:
   - cd ./public
