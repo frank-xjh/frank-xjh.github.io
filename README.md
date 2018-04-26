@@ -1,6 +1,4 @@
-## Getol-Hexo
-
-[![Build Status](https://travis-ci.org/frank-xjh/frank-xjh.github.io.svg?branch=source)](https://travis-ci.org/frank-xjh/frank-xjh.github.io)
+## Getol-Hexo  [![Build Status](https://travis-ci.org/frank-xjh/frank-xjh.github.io.svg?branch=source)](https://travis-ci.org/frank-xjh/frank-xjh.github.io)
 
 Powered by [Hexo](https://hexo.io/)
 
