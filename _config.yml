@@ -12,7 +12,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://frank-xjh.github.io
+url: http://blog.4leaf.top
 root: /
 permalink: :title/
 permalink_defaults:
