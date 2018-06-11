@@ -9,6 +9,7 @@ install:
 before_script:
   - npm install -g gulp
   - npm install gulp gulp-minify-css gulp-htmlmin gulp-htmlclean --save
+  - hexo clean
 
 
 script:
