@@ -1,0 +1,333 @@
+<!DOCTYPE html><html class="theme-next mist use-motion" lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="theme-color" content="#222"><script src="/lib/pace/pace.min.js?v=1.0.2"></script><link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>!function(e,t,o,c,i,a,n){e.DaoVoiceObject=i,e[i]=e[i]||function(){(e[i].q=e[i].q||[]).push(arguments)},e[i].l=1*new Date,a=t.createElement(o),n=t.getElementsByTagName(o)[0],a.async=1,a.src=c,a.charset="utf-8",n.parentNode.insertBefore(a,n)}(window,document,"script",("https:"==document.location.protocol?"https:":"http:")+"//widget.daovoice.io/widget/0f81ff2f.js","daovoice"),daovoice("init",{app_id:"ec0f5f1c"}),daovoice("update")</script><link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"><link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css"><link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4"><link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222"><meta name="keywords" content="Github,Pages,Node.js,Hexo,Blog,Git,"><link rel="alternate" href="/atom.xml" title="Getol" type="application/atom+xml"><meta name="description" content="1 前言本篇教程基于Windows10，Windows其他版本差异不大，可供参考。本人搜集整合网上的资料，以及坑坑坑，写出本篇文章，部分内容可能会与其他教程雷同，请不要介意。"><meta name="keywords" content="Github,Pages,Node.js,Hexo,Blog,Git"><meta property="og:type" content="article"><meta property="og:title" content="Hexo 1：利用Hexo+GitHub Pages开发自己的博客"><meta property="og:url" content="http://blog.4leaf.top/Hexo 1：利用Hexo+GitHub Pages开发自己的博客/index.html"><meta property="og:site_name" content="Getol"><meta property="og:description" content="1 前言本篇教程基于Windows10，Windows其他版本差异不大，可供参考。本人搜集整合网上的资料，以及坑坑坑，写出本篇文章，部分内容可能会与其他教程雷同，请不要介意。"><meta property="og:locale" content="zh-Hans"><meta property="og:image" content="https://i.loli.net/2018/01/13/5a5a26b754feb.jpg"><meta property="og:image" content="https://i.loli.net/2018/01/13/5a5a273348688.jpg"><meta property="og:image" content="https://i.loli.net/2018/01/13/5a5a27d46662b.jpg"><meta property="og:image" content="https://i.loli.net/2018/01/13/5a5a25256d132.png"><meta property="og:updated_time" content="2018-07-26T05:44:28.646Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Hexo 1：利用Hexo+GitHub Pages开发自己的博客"><meta name="twitter:description" content="1 前言本篇教程基于Windows10，Windows其他版本差异不大，可供参考。本人搜集整合网上的资料，以及坑坑坑，写出本篇文章，部分内容可能会与其他教程雷同，请不要介意。"><meta name="twitter:image" content="https://i.loli.net/2018/01/13/5a5a26b754feb.jpg"><script type="text/javascript" id="hexo.configurations">var NexT=window.NexT||{},CONFIG={root:"/",scheme:"Mist",version:"5.1.4",sidebar:{position:"left",display:"post",offset:12,b2t:!1,scrollpercent:!0,onmobile:!0},fancybox:!0,tabs:!0,motion:{enable:!0,async:!1,transition:{post_block:"fadeIn",post_header:"slideDownIn",post_body:"slideDownIn",coll_header:"slideLeftIn",sidebar:"slideUpIn"}},duoshuo:{userId:"0",author:"博主"},algolia:{applicationID:"",apiKey:"",indexName:"",hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"We didn't find any results for the search: ${query}",hits_stats:"${hits} results found in ${time} ms"}}}</script><link rel="canonical" href="http://blog.4leaf.top/Hexo 1：利用Hexo+GitHub Pages开发自己的博客/"><title>Hexo 1：利用Hexo+GitHub Pages开发自己的博客 | Getol</title><script>!function(e,a,t,n,g,c,o){e.GoogleAnalyticsObject=g,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),o=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",o.parentNode.insertBefore(c,o)}(window,document,"script",0,"ga"),ga("create","UA-112542651-1","auto"),ga("send","pageview")</script><style>.forkme{display:none}@media (min-width:768px){.forkme{display:inline}}</style></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"><div class="container sidebar-position-left page-home"><div class="headband"></div><div class="forkme"> <a href="https://github.com/frank-xjh/frank-xjh.github.io" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513;color:#fff;position:absolute;top:0;border:0;right:0" aria-hidden="true"><path d="M0 0 115 115 130 115 142 142 250 250 250 0Z"></path><path d="M128.3 109C113.8 99.7 119 89.6 119 89.6 122 82.7 120.5 78.6 120.5 78.6 119.2 72 123.4 76.3 123.4 76.3 127.3 80.9 125.5 87.3 125.5 87.3 122.9 97.6 130.6 101.9 134.4 103.2" fill="currentColor" style="transform-origin:130px 106px" class="octo-arm"></path><path d="M115 115C114.9 115.1 118.7 116.5 119.8 115.4L133.7 101.6C136.9 99.2 139.9 98.4 142.2 98.6 133.8 88 127.5 74.4 143.8 58 148.5 53.4 154 51.2 159.7 51 160.3 49.4 163.2 43.6 171.4 40.1 171.4 40.1 176.1 42.5 178.8 56.2 183.1 58.6 187.2 61.8 190.9 65.4 194.5 69 197.7 73.2 200.1 77.6 213.8 80.2 216.3 84.9 216.3 84.9 212.7 93.1 206.9 96 205.4 96.6 205.1 102.4 203 107.8 198.3 112.5 181.9 128.9 168.3 122.5 157.7 114.1 157.9 116.9 156.7 120.9 152.7 124.9L141 136.5C139.8 137.7 141.6 141.9 141.8 141.8Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style></div><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-wrapper"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">Getol</span><span class="logo-line-after"><i></i></span></a></div><p class="site-subtitle">IT</p></div><div class="site-nav-toggle"> <button><span class="btn-bar"></span><span class="btn-bar"></span><span class="btn-bar"></span></button></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br> 首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br> 标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i><br> 分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-tasks"></i><br> 归档</a></li><li class="menu-item menu-item-top"><a href="/top/" rel="section"><i class="menu-item-icon fa fa-fw fa-signal"></i><br> top</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br> 搜索</a></li></ul><div class="site-search"><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class="search-icon"><i class="fa fa-search"></i></span><span class="popup-btn-close"><i class="fa fa-times-circle"></i></span><div class="local-search-input-wrapper"> <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input"></div></div><div id="local-search-result"></div></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="http://blog.4leaf.top/Hexo 1：利用Hexo+GitHub Pages开发自己的博客/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="Getol"><meta itemprop="description" content=""><meta itemprop="image" content="/images/avatar.png"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="Getol"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">Hexo 1：利用Hexo+GitHub Pages开发自己的博客</h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span> <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-30T14:29:42+00:00">2017-12-30</time></span> <span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Blog/" itemprop="url" rel="index"><span itemprop="name">Blog</span></a></span> ， <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Blog/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a></span></span> <span class="post-comments-count"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-comment-o"></i></span><a href="/Hexo 1：利用Hexo+GitHub Pages开发自己的博客/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/Hexo 1：利用Hexo+GitHub Pages开发自己的博客/" itemprop="commentCount"></span></a></span> <span id="/Hexo 1：利用Hexo+GitHub Pages开发自己的博客/" class="leancloud_visitors" data-flag-title="Hexo 1：利用Hexo+GitHub Pages开发自己的博客"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span> <span class="post-meta-item-text">热度&#58;</span> <span class="leancloud-visitors-count">℃</span></span><div class="post-wordcount"><span class="post-meta-item-icon"><i class="fa fa-database"></i></span> <span class="post-meta-item-text">字数统计&#58;</span> <span title="字数统计">3,896</span> <span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-clock-o"></i></span> <span class="post-meta-item-text">阅读时长 &asymp;</span> <span title="阅读时长">15</span></div></div></header><div class="post-body" itemprop="articleBody"><p><img src="https://i.loli.net/2018/01/13/5a5a26b754feb.jpg" alt=""></p><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1 前言"></a>1 前言</h2><p>本篇教程基于Windows10，Windows其他版本差异不大，可供参考。本人搜集整合网上的资料，以及坑坑坑，写出本篇文章，部分内容可能会与其他教程雷同，请不要介意。</p><a id="more"></a><h2 id="2-资料"><a href="#2-资料" class="headerlink" title="2 资料"></a>2 资料</h2><h3 id="2-1-Github"><a href="#2-1-Github" class="headerlink" title="2.1 Github"></a>2.1 <a href="https://github.com/" target="_blank" rel="noopener">Github</a></h3><p>gitHub是一个面向[开源及私有软件项目的托管平台，因为只支持git 作为唯一的版本库格式进行托管，故名gitHub。</p><p> gitHub于2008年4月10日正式上线，除了git代码仓库托管及基本的 Web管理界面以外，还提供了订阅、讨论组、文本渲染、在线文件编辑器、协作图谱（报表）、代码片段分享（Gist）等功能。目前，其注册用户已经超过350万，托管版本数量也是非常之多，其中不乏知名开源项目 Rubyon Rails、jQuery、python等</p><h3 id="2-2-Github-Pages"><a href="#2-2-Github-Pages" class="headerlink" title="2.2 Github Pages"></a>2.2 <a href="https://pages.github.com/" target="_blank" rel="noopener">Github Pages</a></h3><p>GitHub Pages是一个静态站点托管服务。</p><p>GitHub Pages设计用于直接从GitHub存储库托管您的个人，组织或项目页面。要详细了解GitHub Pages网站的不同类型，请参阅“<a href="https://help.github.com/articles/user-organization-and-project-pages/" target="_blank" rel="noopener">用户，组织和项目页面</a>“。</p><p>您可以在线创建和发布GitHub页面。如果您更喜欢在本地工作，则可以使用 <a href="http://desktop.github.com/" target="_blank" rel="noopener">GitHub Desktop</a> 或 <a href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line" target="_blank" rel="noopener">命令行</a>。</p><p>GitHub Pages是一个静态网站托管服务，不支持服务器端代码，如PHP，Ruby或Python</p><h3 id="2-3-Git-分布式版本控制系统-官网地址-（吐槽，页面太简陋）"><a href="#2-3-Git-分布式版本控制系统-官网地址-（吐槽，页面太简陋）" class="headerlink" title="2.3 Git(分布式版本控制系统)  -官网地址 （吐槽，页面太简陋）"></a>2.3 <a href="https://baike.baidu.com/item/GIT/12647237?fr=aladdin" target="_blank" rel="noopener">Git(分布式版本控制系统)</a> -<a href="https://git-scm.com/" target="_blank" rel="noopener">官网地址</a> （吐槽，页面太简陋）</h3><p>Git是一款免费、开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。</p><p>Git是一个开源的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。</p><h3 id="2-4-Node-js-官网地址"><a href="#2-4-Node-js-官网地址" class="headerlink" title="2.4 Node.js  -官网地址"></a>2.4 <a href="https://baike.baidu.com/item/node.js/7567977?fr=aladdin" target="_blank" rel="noopener">Node.js</a> -<a href="https://nodejs.org/en/" target="_blank" rel="noopener">官网地址</a></h3><p>Node.js是一个Javascript运行环境(runtime)，发布于2009年5月，由Ryan Dahl开发，实质是对Chrome V8引擎进行了封装。Node.js对一些特殊用例进行优化，提供替代的API，使得V8在非浏览器环境下运行得更好。</p><p>V8引擎执行Javascript的速度非常快，性能非常好。Node.js是一个基于Chrome JavaScript运行时建立的平台， 用于方便地搭建响应速度快、易于扩展的网络应用。Node.js 使用事件驱动， 非阻塞I/O模型而得以轻量和高效，非常适合在分布式设备上运行数据密集型的实时应用。</p><h3 id="2-5-Hexo"><a href="#2-5-Hexo" class="headerlink" title="2.5 Hexo"></a>2.5 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a></h3><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p><h2 id="3-正式搭建"><a href="#3-正式搭建" class="headerlink" title="3 正式搭建"></a>3 正式搭建</h2><p>讲了真么多，该实践了，就开始在萎软（滑稽）上开始搭建自己的Blog-Hexo。</p><h3 id="3-1-配置环境"><a href="#3-1-配置环境" class="headerlink" title="3.1 配置环境"></a>3.1 配置环境</h3><h4 id="3-1-1-安装Node-js"><a href="#3-1-1-安装Node-js" class="headerlink" title="3.1.1 安装Node.js"></a>3.1.1 安装Node.js</h4><p>我已在资料中提供了网址，点击后在界面中会有两个模块，如下图：</p><p><img src="https://i.loli.net/2018/01/13/5a5a273348688.jpg" alt=""></p><p>两个都可以选择，下载可能较慢，唯有等待，也可以参见网上的其他方法。下载下来后，打开.msi文件，一路next即可。</p><div class="note info"><p>如若不是x64，在导航栏选择Download，在里面下载即可。附：<a href="https://npm.taobao.org/mirrors/node" target="_blank" rel="noopener">淘宝国内镜像的快速安装网址</a></p></div><h4 id="3-1-2-安装Git-下载地址"><a href="#3-1-2-安装Git-下载地址" class="headerlink" title="3.1.2 安装Git  下载地址"></a>3.1.2 安装Git <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">下载地址</a></h4><p>点击，缓慢的等待即可（哭哭。。。哭）</p><h3 id="3-2-搭建Hexo"><a href="#3-2-搭建Hexo" class="headerlink" title="3.2 搭建Hexo"></a>3.2 搭建Hexo</h3><p>经过长长长的等待，终于可以再来一次长长长的等待了！！！</p><p><img src="https://i.loli.net/2018/01/13/5a5a27d46662b.jpg" alt=""></p><p>生气中。。。。。。</p><h4 id="3-2-1-安装Hexo"><a href="#3-2-1-安装Hexo" class="headerlink" title="3.2.1 安装Hexo"></a>3.2.1 安装Hexo</h4><p>因为npm在国外，被天朝伟大的墙墙墙（<strong>GFW</strong>）挡住了，所以我们使用淘宝的镜像就好啦！</p><p>打开cmd，执行如下命令</p><figure class="highlight plain"><figcaption><span>cmd</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure><p>一定要把360、腾讯电脑管家那些玩意儿给关掉，有几次我失败了，强制关机才干掉电脑。</p><p>正式安装，执行如下命令：</p><figure class="highlight plain"><figcaption><span>cmd</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure><p>（在默认路径即可）</p><h4 id="3-2-2-建立站点"><a href="#3-2-2-建立站点" class="headerlink" title="3.2.2 建立站点"></a>3.2.2 建立站点</h4><p>现在任意一个盘符例建一个文件夹Blog，再在里边建一个文件夹（如your_name.github.io，这会用到Github，在后边介绍）。比如我要进入<code>D:\Blog\your_name.github.io</code>，那就输入 <code>D:</code>回车，然后再<br></p><figure class="highlight plain"><figcaption><span>所在目录：~/blog/</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd Blog\your_name.github.io</span><br></pre></td></tr></table></figure><p></p><p>根据 Hexo 的官方文档，依次执行下面两条命令，建立我们的新网站：</p><figure class="highlight plain"><figcaption><span>所在目录：~/blog/</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">cnpm install（如果失败，试npm install）</span><br></pre></td></tr></table></figure><p>现在，你在终端中输入<code>hexo g &amp; hexo s</code>（确保路径不变），然后点开 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> ，恭喜你！已经在本地搭建好博客了(๑•̀ㅂ•́)و✧！距离成功只差下一步——部署博客到 Github Pages 了～</p><div class="note danger"><p>如果文件夹不为空，会报错。</p></div><h4 id="3-2-3-发布文章"><a href="#3-2-3-发布文章" class="headerlink" title="3.2.3  发布文章"></a>3.2.3 发布文章</h4><p>本章不介绍，下一行将详细介绍，建议先配置，后码文。</p><h4 id="3-2-4-目录介绍"><a href="#3-2-4-目录介绍" class="headerlink" title="3.2.4 目录介绍"></a>3.2.4 目录介绍</h4><p>在你完成3.2.2节时，你会发现主文件夹下的目录是这样的：</p><figure class="highlight plain"><figcaption><span>所在目录：~/blog/</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   └── _posts （文章）</span><br><span class="line">├── public</span><br><span class="line">├── node_modules</span><br><span class="line">├── .deploy_git （没有没关系）</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure><ul><li><code>_config.yml</code> 文件存放着网站的配置信息，可以在这里配置大部分的参数。</li><li><code>package.json</code> 文件存放着插件信息，从中可以查看那些插件已经安装。</li><li><code>scaffolds</code> 是模板文件夹，新建文章时，Hexo 会根据 scaffold 来建立文件，不过这个模板和后面的主题里指的模板不一样。</li><li><code>source</code> 是存放用户资源的地方的文件夹。Markdown 和 HTML 文件会被解析并放到 <code>public</code> 文件夹，其他文件会被拷贝过去。</li><li><code>themes</code> 主题文件夹，Hexo 会根据主题来生成静态页面，我们以后自己安装的主题也都会放在这个文件夹下面，默认的 landscape 主题（丑）已经在里面了。</li><li><code>public</code> 执行hexo generate命令，输出的静态网页内容目录</li><li><code>node_modules</code> 存放Hexo的一些插件等等（病句）。</li><li><code>.deploy_git</code> 执行hexo deploy命令部署到GitHub上的内容目录。</li></ul><h4 id="3-2-5-小结"><a href="#3-2-5-小结" class="headerlink" title="3.2.5 小结"></a>3.2.5 小结</h4><p>3.2节内容详细讲述了安装Hexo的方法，可能还会有一些问题，欢迎QAQ。</p><p>此外，有一些内容将在配置中介绍，可移步一观（点我）。</p><h3 id="3-3-部署到Github上"><a href="#3-3-部署到Github上" class="headerlink" title="3.3 部署到Github上"></a>3.3 部署到Github上</h3><p>我们已经将Hexo的雏形搭建完毕，为了能从外网访问到博客，所以我们将它托管到Github上。</p><table><thead><tr><th>问题</th><th style="text-align:right">解答</th></tr></thead><tbody><tr><td>为什么要部署到 Github Pages 上？</td><td style="text-align:right">首先免费，其次省心，最后可以学习使用 Github。</td></tr><tr><td>Github Pages 有容量限制吗？</td><td style="text-align:right">有，由 What is GitHub Pages? 可知：大小限制为 1 GB，一个月 100 GB 流量。</td></tr><tr><td>超出限制的容量怎么办？</td><td style="text-align:right">讲真，如果图片音乐视频等大文件都放在 七牛云 、阿里云OSS 或其它云存储上，那么压根不用担心，因为我的博客现在也才用了很少 ，所以无需担心。</td></tr><tr><td>国内访问速度行不行，有必要同时部署在 Coding 上吗？</td><td style="text-align:right">个人感觉完全没必要，自己不用梯子时，感觉访问速度可以，毕竟站点的大文件都是放在了云存储上。</td></tr><tr><td>我可以用自己的域名吗？</td><td style="text-align:right">可以，在<code>~/blog/source/</code>目录下添加 CNAME 文件即可，教程自己 Google。</td></tr></tbody></table><h4 id="3-3-1-登录Github"><a href="#3-3-1-登录Github" class="headerlink" title="3.3.1 登录Github"></a>3.3.1 登录Github</h4><p>网上注册Github以及登录有很多教程，在此就不再赘述。</p><p>注：<br>1、Github注册为个人、企业等等都可以，只不过付费的可以设置私密，不让人家看到你的代 码，但也有不计其数的代码在Github上是开放的，除非你是公司机密，否则影响不太大。<br>2、如果嫌官网是英文，可以去下载Chrome的浏览器，它可以自动翻译，从官网下下来后，点安装程序，可能还要下载，等一会即可，如果长时间不行，那你就是被墙拦了（如需上官网下Chrome，请私信我QQ，获取谷歌访问助手，将它装在现有的浏览器上，然后就可以上Google了）。</p><div class="note primary"><p>突然发现自己话好多：）</p></div><h4 id="3-3-2-创建repository"><a href="#3-3-2-创建repository" class="headerlink" title="3.3.2 创建repository"></a>3.3.2 创建repository</h4><p>登录Github后，点右上角的”+”号，会出现一栏，点击”New repository”，设置如下图：</p><p><img src="https://i.loli.net/2018/01/13/5a5a25256d132.png" alt=""></p><p><code>yourname</code>是你的Github的账户名。Description随便写即可。设置完毕后，点击那个绿色键”Create repository”。</p><p>到此，Github上到此结束，接下来，我们要把Git和Github连起来。</p><h4 id="3-3-3-Setting-up-Git"><a href="#3-3-3-Setting-up-Git" class="headerlink" title="3.3.3 Setting up Git"></a>3.3.3 Setting up Git</h4><p>根据 Github 的官方文档 <a href="https://help.github.com/articles/set-up-git/#setting-up-git" target="_blank" rel="noopener">Setting up Git</a> ，这一操作的目的是 Tell Git your <em>name</em> so your commits will be properly labeled 和 Tell Git the <em>email address</em> that will be associated with your Git commits，也就是告诉版本控制软件 Git 接下来这台电脑上提交的文件是 E-mail 地址是什么的谁谁谁提交的。在 Git Bash 中执行如下代码即可：</p><figure class="highlight plain"><figcaption><span>Git Bash</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;YOUR NAME&quot;</span><br><span class="line">git config --global user.email &quot;YOUR EMAIL ADDRESS&quot;</span><br></pre></td></tr></table></figure><p>其中，<code>YOUR NAME</code> 是自己取的名字，<code>YOUR EMAIL ADDRESS</code> 是自己的邮箱。由于自己的博客网站就自己一个人提交，所以就都设置成跟 Github 用户名和邮箱相同了。但其实是可以不同的，因为对于很多项目，并不只有一个开发者，Github 允许多人向同一个 Repo 提交，这里提供用户名和邮箱，只是为了搞清楚哪些代码是谁谁谁提交的。</p><h4 id="3-3-4-Authenticating-with-GitHub-from-Git"><a href="#3-3-4-Authenticating-with-GitHub-from-Git" class="headerlink" title="3.3.4 Authenticating with GitHub from Git"></a>3.3.4 Authenticating with GitHub from Git</h4><p>这一整章，我们的最终目的是实现在终端中敲入 <code>hexo deploy</code> 后，Hexo 会将我们本地的 <code>public</code> 文件夹下的东西上传到 Github 服务器，这样我们就可以通过 <code>your_name.github.io</code> 这个域名（<code>your_name</code> 是你的 Github 用户名）看到我们已经上网的博客网站了。为了实现这个目的，首先我们先要让本地的电脑和 Github 服务器建立起某种联系，也就是让 Github 服务器信任由我这台电脑提交的东西，接受，并存放到 <code>your_name.github.io</code> 这个 Repo 下面，与 Github 服务器建立信任的这个环节就是身份认证（Authenticating ）。根据 Github 的官方文档 <a href="https://help.github.com/articles/set-up-git/#next-steps-authenticating-with-github-from-git" target="_blank" rel="noopener">Authenticating with GitHub from Git</a> 这里，我们选择 <a href="https://help.github.com/articles/set-up-git/#connecting-over-ssh" target="_blank" rel="noopener">Connecting over SSH</a> 这一种方式。在 Github 的官方文档 <a href="https://help.github.com/categories/authenticating-to-github/" target="_blank" rel="noopener">Categories / SSH</a> 下，我们能找到关于 Github 与 SSH 的资料。</p><h5 id="3-3-4-1-生成新的-SSH-key"><a href="#3-3-4-1-生成新的-SSH-key" class="headerlink" title="3.3.4.1 生成新的 SSH key"></a>3.3.4.1 生成新的 SSH key</h5><p>根据 Github 的官方文档 <a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#generating-a-new-ssh-key" target="_blank" rel="noopener">Generating a new SSH key</a> ， 我们在 Git Bash 下执行如下命令，生成 SSH key</p><figure class="highlight plain"><figcaption><span>Git Bash</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</span><br></pre></td></tr></table></figure><p>其中，<a href="mailto:`your_email@example.com" target="_blank" rel="noopener">`your_email@example.com</a>` 是你的 Github 注册邮箱。然后，Git Bash 中会出现</p><figure class="highlight plain"><figcaption><span>Git Bash</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Generating public/private rsa key pair.</span><br></pre></td></tr></table></figure><p>表示新的 SSH 已经生成了。随后会出现</p><figure class="highlight plain"><figcaption><span>Git Bash</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Enter a file in which to save the key</span><br><span class="line">(/Users/you/.ssh/id_rsa): [Press enter]</span><br></pre></td></tr></table></figure><p>这里 <code>id_rsa</code> 是生成的 key 文件的文件名，默认都是这个；如果不是，在后面用到 <code>id_rsa</code> 的地方请替换成出现的名字。这条信息是让你选择 SSH key 存放的地点，按回车选择默认的即可。回车后，还会出现</p><figure class="highlight plain"><figcaption><span>Git Bash</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Enter passphrase (empty for no passphrase): [Type a passphrase]</span><br><span class="line">Enter same passphrase again: [Type passphrase again]</span><br></pre></td></tr></table></figure><p>让你设置使用 SSH 密钥时的密码，由于我们都是在自己个人的电脑上操作，所以仍然回车，不设置密码即可。</p><h5 id="3-3-4-2-将-SSH-key-添加到-ssh-agent"><a href="#3-3-4-2-将-SSH-key-添加到-ssh-agent" class="headerlink" title="3.3.4.2 将 SSH key 添加到 ssh-agent"></a>3.3.4.2 将 SSH key 添加到 ssh-agent</h5><p>根据 Wikipedia，ssh-agent 是一个在本地登录会话持续时间内，将未加密的密钥存储在内存中，并使用 Unix 域套接字与 SSH 客户端进行通信的程序。根据 Github 的官方文档 <a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#adding-your-ssh-key-to-the-ssh-agent" target="_blank" rel="noopener">Adding your SSH key to the ssh-agent</a> ， 我们在 Git Bash 下执行如下命令，开启 ssh-agent</p><figure class="highlight plain"><figcaption><span>Git Bash</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eval &quot;$(ssh-agent -s)&quot;</span><br></pre></td></tr></table></figure><p>然后我们要将这个 SSH key 添加到 ssh-agent 里去，运行如下命令，其中 <code>id_rsa</code> 是你的 key 文件的文件名：</p><figure class="highlight plain"><figcaption><span>Git Bash</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure><h5 id="3-3-4-3-将-SSH-key-添加到-Github-账户"><a href="#3-3-4-3-将-SSH-key-添加到-Github-账户" class="headerlink" title="3.3.4.3 将 SSH key 添加到 Github 账户"></a>3.3.4.3 将 SSH key 添加到 Github 账户</h5><p>Github 的官方文档 <a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/" target="_blank" rel="noopener">Adding a new SSH key to your GitHub account</a> 已经图文并茂将如何在 Github 帐号中添加 SSH 介绍的非常清楚了。先是在 Git Bash 中将 SSH Key 拷贝出来：</p><p>进入<code>C:\Users\your_name\.ssh</code>，<code>your_name</code>是你电脑的账户名。进去后，找到<code>id_rsa.pub</code>，用记事本打开，复制里面的内容。然后登录 Github 帐号，依次点击自己的头像，Settings，SSH and GPG keys，New SSH key 或者 Add SSH key， 在 Title 这里输入 Key 的label，比如 your_name - PC，然后在 Key 里面把 SSH Key 粘贴进去，点击 Add SSH key 大功告成。</p><div class="note success"><p>这下我们就已经生成身份认证的凭证 SSH key，分别放在自己本地电脑和 Github 服务器上，以后向 Github 提交内容的时候，两者的 Key 匹配就可以了，省去了我们每次输密码的时间。</p></div><h5 id="3-3-4-4-测试-SSH-连接"><a href="#3-3-4-4-测试-SSH-连接" class="headerlink" title="3.3.4.4 测试 SSH 连接"></a>3.3.4.4 测试 SSH 连接</h5><p>在大功告成之前，为了稳妥起见，我们来测试一下自己跟 Github 服务器 SSH 连接是否已经建立起来了。Github 的官方文档 <a href="https://help.github.com/articles/testing-your-ssh-connection/" target="_blank" rel="noopener">Testing your SSH connection</a> 已经将次环节介绍得非常详细了。我们要做得就是在 Git Bash 中敲入</p><figure class="highlight plain"><figcaption><span>Git Bash</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure><p>你可能会看到类似于</p><figure class="highlight plain"><figcaption><span>Git Bash</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host &apos;github.com (192.30.252.1)&apos; can&apos;t be established.</span><br><span class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)?</span><br></pre></td></tr></table></figure><p>输入 <code>yes</code> 敲回车，就可以看到如下的成功信息了</p><figure class="highlight plain"><figcaption><span>Git Bash</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Hi username! You&apos;ve successfully authenticated, but GitHub does not</span><br><span class="line">provide shell access.</span><br></pre></td></tr></table></figure><p>至此为止，我们已经建立起了跟 Github 服务器的连接。其实我们也可以用 <code>git push</code> 命令，提交 <code>public</code> 文件夹下面的内容，不过 Hexo 更我们提供了更方便的途径。</p><h4 id="3-3-5-Hexo部署"><a href="#3-3-5-Hexo部署" class="headerlink" title="3.3.5 Hexo部署"></a>3.3.5 Hexo部署</h4><p>Hexo 提供了 <code>hexo deploy</code> 命令，可以方便地将整个 <code>public</code> 文件夹部署到 Github 服务器上去。根据 Hexo 的官方文档 <a href="https://hexo.io/zh-cn/docs/deployment.html" target="_blank" rel="noopener">基本操作 — 部署</a> 我们只需要做以下两步：</p><ul><li><strong>Step 1:</strong> 在终端中运行如下命令，安装 <code>hexo-deployer-git</code> 插件：</li></ul><figure class="highlight plain"><figcaption><span>所在目录：~/blog/</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure><ul><li><strong>Step 2:</strong> 在<code>_config.yml</code> 中修改参数，如下所示：</li></ul><figure class="highlight diff"><figcaption><span>文件位置：~/blog/_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"><span class="deletion">- type:</span></span><br><span class="line"><span class="addition">+ type: git</span></span><br><span class="line"><span class="addition">+ repo: https://github.com/your_name/your_name.github.io.git</span></span><br><span class="line"><span class="addition">+ branch: master</span></span><br></pre></td></tr></table></figure><p>其中，your_name 是你的 Github 帐号名。<code>repo</code> 对应的是你 <code>your_name.github.io</code> 这个项目的库（Repository）地址，进入这个项目的主页，点击 <strong>Clone or download</strong> 下拉菜单也能看到。<code>branch</code> 是分支名称，如果使用的是 GitHub 或 GitCafe 的话，程序会尝试自动检测，通常都是 <code>master</code>。</p><div class="note warning"><p>注意，冒号后的空格非常重要，一定要有！</p></div><div class="note success"><p>至此，在终端执行 <code>hexo deploy</code> 命令，就可以把我们的网站部署到 Github 服务器上。在第一次部署的时候，Github 还会跳出来一个小窗口，让你输入 Github 帐号和密码，输入即可。根据不少网友的说法以及我之前搭站的经验，等待 15 分钟的样子（也可能更快），就可以通过 your_name.github.io （your_name 是你的 Github 用户名）来访问自己的网站了。</p></div><h3 id="3-4-小结"><a href="#3-4-小结" class="headerlink" title="3.4 小结"></a>3.4 小结</h3><p>在这章中，我们成功搭建了Hexo，并部署了Github Pages。庆祝ヾ(◍°∇°◍)ﾉﾞ</p><h2 id="4-预告"><a href="#4-预告" class="headerlink" title="4 预告"></a>4 预告</h2><p>在下一章中我们会着重论述主题的配置和一些插件，并剖析代码，继续分析Hexo，再见！！！</p></div><div><ul class="post-copyright"><li class="post-copyright-author"> <strong>本文作者：</strong> Getol</li><li class="post-copyright-link"> <strong>本文链接：</strong> <a href="http://blog.4leaf.top/Hexo 1：利用Hexo+GitHub Pages开发自己的博客/" title="Hexo 1：利用Hexo+GitHub Pages开发自己的博客">http://blog.4leaf.top/Hexo 1：利用Hexo+GitHub Pages开发自己的博客/</a></li><li class="post-copyright-license"> <strong>版权声明：</strong> 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="external nofollow" target="_blank">CC BY-NC-ND 4.0</a> 许可协议。转载请注明出处！</li></ul></div><footer class="post-footer"><div class="post-tags"><a href="/tags/Github/" rel="tag"><i class="fa fa-tag"></i> Github</a><a href="/tags/Pages/" rel="tag"><i class="fa fa-tag"></i> Pages</a><a href="/tags/Node-js/" rel="tag"><i class="fa fa-tag"></i> Node.js</a><a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a><a href="/tags/Blog/" rel="tag"><i class="fa fa-tag"></i> Blog</a><a href="/tags/Git/" rel="tag"><i class="fa fa-tag"></i> Git</a></div><div class="post-widgets"><div class="wp_rating"><div style="color:rgba(0,0,0,.75);font-size:13px;letter-spacing:3px">(&gt;看完记得五星好评哦亲&lt;)</div><div id="wpac-rating"></div></div></div><div class="post-nav"><div class="post-nav-next post-nav-item"></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"> <a href="/hustOJ的搭建与使用-0目录/" rel="prev" title="hustOJ的搭建与使用-0目录">hustOJ的搭建与使用-0目录<i class="fa fa-chevron-right"></i></a></div></div></footer></div></article><div class="post-spread"><div class="addthis_inline_share_toolbox"><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a6c3bdd5b260ad9" async="async"></script></div></div></div></div><div class="comments" id="comments"></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span><span class="sidebar-toggle-line sidebar-toggle-line-middle"></span><span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div id="sidebar-dimmer"></div><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap"> 文章目录</li><li class="sidebar-nav-overview" data-target="site-overview-wrap"> 站点概览</li></ul><section class="site-overview-wrap sidebar-panel"><div class="site-overview"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"> <a href="/" class="site-author-image" rel="start" style="border:none"><img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Getol"></a><p class="site-author-name" itemprop="name">Getol</p><p class="site-description motion-element" itemprop="description">中小学生之菜鸟博客</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"> <a href="/archives/"><span class="site-state-item-count">4</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"> <a href="/categories/index.html"><span class="site-state-item-count">6</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"> <a href="/tags/index.html"><span class="site-state-item-count">12</span> <span class="site-state-item-name">标签</span></a></div></nav><div class="feed-link motion-element"><a href="/atom.xml" rel="alternate"><i class="fa fa-rss"></i> RSS</a></div><div class="links-of-author motion-element"><span class="links-of-author-item"><a href="https://github.com/frank-xjh" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i> GitHub</a></span><span class="links-of-author-item"><a href="https://www.luogu.org/space/show?uid=19654" target="_blank" title="Luogu"><i class="fa fa-fw fa-code"></i> Luogu</a></span></div><div class="cc-license motion-element" itemprop="license"> <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="cc-opacity" target="_blank" rel="external nofollow"><img src="/images/cc-by-nc-nd.svg" alt="Creative Commons"></a></div><div class="links-of-blogroll motion-element links-of-blogroll-block"><div class="links-of-blogroll-title"><i class="fa fa-fw fa-link"></i> Links</div><ul class="links-of-blogroll-list"><li class="links-of-blogroll-item"> <a href="https://liweijie1130.github.io/" title="LiWeijie's Blog" target="_blank" rel="external nofollow">LiWeijie's Blog</a></li></ul><div id="days"></div><script language="javascript">function show_date_time(){window.setTimeout("show_date_time()",1e3),BirthDay=new Date("12/31/2017 17:00:00"),today=new Date,timeold=today.getTime()-BirthDay.getTime(),sectimeold=timeold/1e3,secondsold=Math.floor(sectimeold),msPerDay=864e5,e_daysold=timeold/msPerDay,daysold=Math.floor(e_daysold),e_hrsold=24*(e_daysold-daysold),hrsold=setzero(Math.floor(e_hrsold)),e_minsold=60*(e_hrsold-hrsold),minsold=setzero(Math.floor(60*(e_hrsold-hrsold))),seconds=setzero(Math.floor(60*(e_minsold-minsold))),document.getElementById("days").innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒"}function setzero(e){return e<10&&(e="0"+e),e}show_date_time()</script></div></div></section><section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-前言"><span class="nav-text">1 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-资料"><span class="nav-text">2 资料</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-Github"><span class="nav-text">2.1 Github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-Github-Pages"><span class="nav-text">2.2 Github Pages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-Git-分布式版本控制系统-官网地址-（吐槽，页面太简陋）"><span class="nav-text">2.3 Git(分布式版本控制系统) -官网地址 （吐槽，页面太简陋）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-Node-js-官网地址"><span class="nav-text">2.4 Node.js -官网地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-Hexo"><span class="nav-text">2.5 Hexo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-正式搭建"><span class="nav-text">3 正式搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-配置环境"><span class="nav-text">3.1 配置环境</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-1-安装Node-js"><span class="nav-text">3.1.1 安装Node.js</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-2-安装Git-下载地址"><span class="nav-text">3.1.2 安装Git 下载地址</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-搭建Hexo"><span class="nav-text">3.2 搭建Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-1-安装Hexo"><span class="nav-text">3.2.1 安装Hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-2-建立站点"><span class="nav-text">3.2.2 建立站点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-3-发布文章"><span class="nav-text">3.2.3 发布文章</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-4-目录介绍"><span class="nav-text">3.2.4 目录介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-5-小结"><span class="nav-text">3.2.5 小结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-部署到Github上"><span class="nav-text">3.3 部署到Github上</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-1-登录Github"><span class="nav-text">3.3.1 登录Github</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-2-创建repository"><span class="nav-text">3.3.2 创建repository</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-3-Setting-up-Git"><span class="nav-text">3.3.3 Setting up Git</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-4-Authenticating-with-GitHub-from-Git"><span class="nav-text">3.3.4 Authenticating with GitHub from Git</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-3-4-1-生成新的-SSH-key"><span class="nav-text">3.3.4.1 生成新的 SSH key</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-3-4-2-将-SSH-key-添加到-ssh-agent"><span class="nav-text">3.3.4.2 将 SSH key 添加到 ssh-agent</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-3-4-3-将-SSH-key-添加到-Github-账户"><span class="nav-text">3.3.4.3 将 SSH key 添加到 Github 账户</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-3-4-4-测试-SSH-连接"><span class="nav-text">3.3.4.4 测试 SSH 连接</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-5-Hexo部署"><span class="nav-text">3.3.5 Hexo部署</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-小结"><span class="nav-text">3.4 小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-预告"><span class="nav-text">4 预告</span></a></li></ol></div></div></section></div></aside></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span><span class="with-love" id="heart"><i class="fa fa-heart"></i></span> <span class="author" itemprop="copyrightHolder">Getol</span></div> <i>Tip: 本站电脑访问体验更佳耶&nbsp;</i><br><div class="theme-info"><div class="powered-by"></div> <span class="post-count">博客全站共4.8k字</span></div><br><div class="busuanzi-count"><script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span><span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span></div></div></footer><div class="back-to-top"><i class="fa fa-arrow-up"></i> <span id="scrollpercent"><span>0</span>%</span></div></div><script type="text/javascript">"[object Function]"!==Object.prototype.toString.call(window.Promise)&&(window.Promise=null)</script><script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script><script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script><script type="text/javascript" src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.js"></script><script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script><script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: true,
+        appId: 'nU3dRcv7McBstIjzzjwmvCnQ-gzGzoHsz',
+        appKey: 'sYivOx3lw9067lTDtt7ObIPX',
+        placeholder: 'Just go go',
+        avatar:'wavatar',
+        guest_info:guest,
+        pageSize:'15' || 10,
+    });
+  </script><script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script><script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script><script>AV.initialize("nU3dRcv7McBstIjzzjwmvCnQ-gzGzoHsz","sYivOx3lw9067lTDtt7ObIPX")</script><script>function showTime(e){var t=new AV.Query(e),c=[],u=$(".leancloud_visitors");u.each(function(){c.push($(this).attr("id").trim())}),t.containedIn("url",c),t.find().done(function(e){var t=".leancloud-visitors-count";if(0!==e.length){for(var n=0;n<e.length;n++){var o=e[n],i=o.get("url"),s=o.get("time"),r=document.getElementById(i);$(r).find(t).text(s)}for(n=0;n<c.length;n++){i=c[n],r=document.getElementById(i);var l=$(r).find(t);""==l.text()&&l.text(0)}}else u.find(t).text(0)}).fail(function(e,t){console.log("Error: "+t.code+" "+t.message)})}function addCount(i){var e=$(".leancloud_visitors"),s=e.attr("id").trim(),r=e.attr("data-flag-title").trim(),t=new AV.Query(i);t.equalTo("url",s),t.find({success:function(e){if(0<e.length){var t=e[0];t.fetchWhenSave(!0),t.increment("time"),t.save(null,{success:function(e){$(document.getElementById(s)).find(".leancloud-visitors-count").text(e.get("time"))},error:function(e,t){console.log("Failed to save Visitor num, with error message: "+t.message)}})}else{var n=new i,o=new AV.ACL;o.setPublicReadAccess(!0),o.setPublicWriteAccess(!0),n.setACL(o),n.set("title",r),n.set("url",s),n.set("time",1),n.save(null,{success:function(e){$(document.getElementById(s)).find(".leancloud-visitors-count").text(e.get("time"))},error:function(e,t){console.log("Failed to create")}})}},error:function(e){console.log("Error:"+e.code+" "+e.message)}})}$(function(){var e=AV.Object.extend("Counter");1==$(".leancloud_visitors").length?addCount(e):1<$(".post-title-link").length&&showTime(e)})</script><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script><script type="text/javascript">wpac_init=window.wpac_init||[],wpac_init.push({widget:"Rating",id:9034,el:"wpac-rating",color:"fc6423"}),function(){if(!("WIDGETPACK_LOADED"in window)){WIDGETPACK_LOADED=!0;var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="//embed.widgetpack.com/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t.nextSibling)}}()</script></body></html>
